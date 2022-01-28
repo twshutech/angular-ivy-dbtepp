@@ -1,0 +1,33 @@
+<h2>Entry Requirements | {{countryCode}}</h2>
+<div>
+  <table>
+    <tr>
+      <th>
+        Date
+      </th>
+      <th>
+        comment
+      </th>
+    </tr>
+    <ng-container *ngIf="list$ | async as list; else noItem">
+      <ng-container *ngFor="let item of list$ | async">
+      <tr>
+        <td>
+          {{item.start}}
+        </td>
+        <td>
+          <markdown>
+            {{item.comment}}
+          </markdown>
+        </td>
+      </tr>
+      </ng-container>
+    </ng-container>
+    <ng-template #noItem>
+      <tr class="noDataTr">
+        <td>No data</td>
+        <td>No data</td>
+      </tr>
+    </ng-template>
+  </table>
+</div>

@@ -1,0 +1,27 @@
+
+table {
+  border: 1px solid #000;
+  width: 100%;
+}
+tr {
+  border: 1px solid #000;
+}
+tr {
+  border: 1px solid #000;
+}
+th, td{
+  border: 1px solid rgba(0, 0, 0, 0.445);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+th:first-child  {
+  width: 100px;
+}
+.noDataTr {
+  text-align: center;
+}
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+*/

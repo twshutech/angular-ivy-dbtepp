@@ -1,4 +1,13 @@
-ngbd-dropdown-basic {
+.bar-left  {
+  /* display: grid; */
+  grid-template-columns: auto auto;
+  gap: 10px;
+  display: none;
+}
+.bar-left > .search {
+  margin: auto;
+}
+.bar-right >  ngbd-dropdown-basic {
   display: flex;
   width: min-content;
   border: 1px solid #007bff;
@@ -9,7 +18,6 @@ ngbd-dropdown-basic {
 #dropdownBasic  {
   border-radius: 0px;
 }
-
 /*
 Copyright Google LLC. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
