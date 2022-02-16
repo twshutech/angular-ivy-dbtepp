@@ -18,6 +18,7 @@ body {
 }
 
 router-outlet + *  {
+  width: 100%;
   padding: 0 16px;
 }
 
@@ -137,9 +138,17 @@ app-top-bar h1 {
   background-color: #EEEEEE;
 }
 
+/* markdown */
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+}
 
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+@media (max-width: 767px) {
+  .markdown-body {
+    padding: 15px;
+  }
+}

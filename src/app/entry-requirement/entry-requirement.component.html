@@ -1,0 +1,48 @@
+<div class="title">
+  <h1>
+    Entry Requirements&nbsp;|&nbsp;
+  </h1>
+  <h2 *ngIf="currentCountryCode | async as ccode; else Init">
+    {{ccode}}
+  </h2>
+  <ng-template #Init>
+    <h2>
+    Select your destination from the dropdwon
+    </h2>
+  </ng-template>
+</div>
+<div class="main">
+  <ngbd-dropdown-basic (newItemEvent)="countryCodeHandler(SelectedCountryItem)"></ngbd-dropdown-basic>
+  <div class="content">
+    <table>
+      <tr>
+        <th>
+          Date
+        </th>
+        <th>
+          comment
+        </th>
+      </tr>
+      <ng-container *ngIf="(list$ | async)?.length != 0 as list; else noItem">
+        <ng-container *ngFor="let item of list$ | async">
+        <tr>
+          <td>
+            {{item.start}}
+          </td>
+          <td>
+            <markdown>
+              {{item.comment}}
+            </markdown>
+          </td>
+        </tr>
+        </ng-container>
+      </ng-container>
+      <ng-template #noItem>
+        <tr class="noDataTr">
+          <td>No data</td>
+          <td>No data</td>
+        </tr>
+      </ng-template>
+    </table>
+  </div>
+</div>

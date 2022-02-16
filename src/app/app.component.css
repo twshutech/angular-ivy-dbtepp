@@ -1,17 +1,4 @@
-ngbd-dropdown-basic {
-  display: flex;
-  width: min-content;
-  border: 1px solid #007bff;
-  position: relative;
-  background-color: #fff;
+.container{
+  justify-content: center;
+  width: 100%;
 }
-
-#dropdownBasic  {
-  border-radius: 0px;
-}
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

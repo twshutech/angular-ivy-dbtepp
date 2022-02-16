@@ -1,0 +1,52 @@
+table {
+  border: 1px solid #000;
+  width: 100%;
+}
+tr {
+  border: 1px solid #000;
+}
+tr {
+  height: 38px;
+  border: 1px solid #000;
+}
+th, td{
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.445);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+th:first-child  {
+  width: 100px;
+}
+table > tr> td> markdown > ul{
+  margin: 0px;
+  padding: 5px;
+}
+table > tr> td> markdown > ul > li  {
+  word-spacing: 0.3em;
+  list-style-position: inside;
+}
+.noDataTr {
+  text-align: center;
+}
+.title  {
+  width: 100%;
+}
+.title> h1, .title>h2{
+  display: inline-flex;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.main > .content, ngbd-dropdown-basic {
+  display: inline-flex;
+  min-height: 40px;
+}
+.main>.content{
+  width: calc(100% - 70px);
+}

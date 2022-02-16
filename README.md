@@ -1,3 +1,4 @@
-# angular-ivy-dbtepp
+# Entry requirement information during COVID-19 pandemic
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-ivy-dbtepp)
+#### API reference
+  Getting the information via [Sitata](https://docs.sitata.com/docs/api-status).
