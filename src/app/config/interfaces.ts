@@ -10,3 +10,8 @@ export interface countryItem {
 export interface travel_restrictions {
 
 }
+export interface entry_rules {
+  start: string;
+  comment:  string
+}
+

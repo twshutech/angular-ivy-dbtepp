@@ -11,27 +11,39 @@ import { countryItem, countryCode } from '../config/interfaces';
 export class NgbdDropdownBasic implements OnInit, OnDestroy {
   contriesList$: Observable<any> = this.configService.getCountries();
   selectedCountryCode: string = 'Select destination country';
-  newItemEvent = new EventEmitter<countryCode>(false);
+  @Output() newItemEvent = new EventEmitter<countryCode>();
+  subscription: any;
+  object: {[key: number]: string} = {2: 'foo', 1: 'bar'};
+  map = new Map([[2, 'foo'], [1, 'bar'], [5, '1ar']]);
 
   constructor(
     private configService: ConfigService
   ){}
 
   ngOnInit(): void {
-    this.contriesList$.pipe()
-      .subscribe(data =>  {
-        console.log(data);
-      });
+    this.subscription = this.contriesList$.pipe().subscribe();
   }
 
   ngOnDestroy(): void {
-
+    this.subscription.unsubscribe();
   }
 
-  selectCountry(countryItem: countryItem): void{
-    this.newItemEvent.emit();
+  selectCountry(countryItem: any): void{
+    this.newItemEvent.emit(countryItem);
     this.selectedCountryCode = countryItem?.name;
     this.configService.selectCountry(countryItem?.country_code);
-    console.log(countryItem);
+    function  f(){
+      return countryItem;
+    }
+    type p = ReturnType<typeof f>
+  }
+
+  isActive(countryItem: countryItem): any{
+    if (this.selectedCountryCode === countryItem.name){
+      return "dropdown-item-active"
+    }
+    else  {
+      return ''
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -7,8 +7,8 @@ import { MarkdownModule } from 'ngx-markdown';
 import { NgbdDropdownBasicModule } from '../app/dropdown-basic/dropdown-basic.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
-import { ProductListComponent } from './product-list/product-list.component';
-// import { }
+import { EntryRequirementComponent } from './entry-requirement/entry-requirement.component';
+import { TravelRestrictionComponent } from './travel-restriction/travel-restriction.component';
 
 @NgModule({
   imports: [
@@ -18,14 +18,15 @@ import { ProductListComponent } from './product-list/product-list.component';
     NgbdDropdownBasicModule,
     MarkdownModule.forRoot(),
     RouterModule.forRoot([
-      { path: '', component: ProductListComponent },
-      // { path: '', component: NgbdDropdownBasic}
+      { path: 'entry-requirement', component: EntryRequirementComponent },
+      { path: 'travel-restriction', component: TravelRestrictionComponent}
     ])
   ],
   declarations: [
     AppComponent,
     TopBarComponent,
-    ProductListComponent
+    EntryRequirementComponent,
+    TravelRestrictionComponent
   ],
   bootstrap: [
     AppComponent
@@ -33,10 +34,3 @@ import { ProductListComponent } from './product-list/product-list.component';
   // schemas:  [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

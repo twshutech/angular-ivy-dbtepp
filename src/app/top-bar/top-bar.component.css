@@ -1,25 +1,30 @@
-.bar-left  {
-  /* display: grid; */
-  grid-template-columns: auto auto;
-  gap: 10px;
-  display: none;
+.bar-right {
+    height: 36px;
+    width: 100%;
 }
-.bar-left > .search {
-  margin: auto;
-}
-.bar-right >  ngbd-dropdown-basic {
+ul{
   display: flex;
-  width: min-content;
-  border: 1px solid #007bff;
-  position: relative;
-  background-color: #fff;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: baseline;
 }
-
-#dropdownBasic  {
-  border-radius: 0px;
+li{
+  list-style: none;
+  font-size: 1em;
+  line-height: 36px;
 }
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/
+li:hover{
+  list-style: none;
+  font-size: 1em;
+  line-height: 36px;
+}
+li>a{
+  color:#FFF
+}
+li>a:hover{
+  text-decoration: none;
+  font-weight: 800;
+}

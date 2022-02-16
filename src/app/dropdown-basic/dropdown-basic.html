@@ -1,15 +1,24 @@
   <div ngbDropdown class="d-inline-block">
     <button class="btn btn-outline-primary" id="dropdownBasic" ngbDropdownToggle>
-      <img src="../../assets/menu-bar.png" alt="menu-bar">
     </button>
     <ul ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <li (click)="selectCountry({'name':'Australia','country_code':'AU'})">OZ</li>
       <ng-container *ngIf="contriesList$ | async as contriesList; else noItem">
         <ng-container *ngFor="let item of contriesList | async">
-          <li ngbDropdownItem (click)="selectCountry(item)">{{item.flag_emoji}} {{item.name}}</li>
+          <li ngbDropdownItem (click)="selectCountry(item)" [ngClass]="isActive(item)">{{item.flag_emoji}} {{item.name}}</li>
         </ng-container>
       </ng-container>
       <ng-template #noItem>
-        <li>{{selectedCountryCode}}</li>
+        <li>&nbsp;<i class="fa fa-spinner fa-spin"></i>&nbsp;{{selectedCountryCode}}</li>
       </ng-template>
     </ul>
   </div>
+  <div ngbDropdown class="d-inline-block">
+    <button class="btn btn-outline-primary" id="dropdownBasic" ngbDropdownToggle>
+    </button>
+    <ul ngbDropdownMenu aria-labelledby="dropdownBasic2">
+      <ng-container *ngFor="let item of map | keyvalue">
+        <li ngbDropdownItem>{{item.key}}:{{item.value}}</li>
+      </ng-container>
+    </ul>
+</div>
